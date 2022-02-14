@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="layout">
+  <div class="layout__nav-wrapper"></div>
+  <div class="layout__body-wrapper">
+    <div class="control" [ngClass]="{ 'is-loading': isLoading }">
+      <input
+        type="text"
+        #searchInput
+        class="input"
+        placeholder="Type book name"
+      />
+    </div>
+    <div class="list is-hoverable"></div>
+  </div>
+  <div class="layout__footer-wrapper"></div>
+</div>

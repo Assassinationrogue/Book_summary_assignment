@@ -1,0 +1,26 @@
+.layout {
+  display: grid;
+  grid-template-rows: 17.2vh 54.6vh 17.2vh;
+  row-gap: 5%;
+
+
+  &__nav {
+    &-wrapper{
+          background-color: rgb(152, 182, 91);
+    }
+  }
+
+  &__body{
+      &-wrapper {
+      background-color: greenyellow; // for checking
+      display: grid;
+    }
+  }
+
+  &__footer{
+      &-wrapper{
+        background-color: darkcyan;
+      }
+  }
+
+}
