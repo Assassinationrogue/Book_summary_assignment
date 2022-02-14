@@ -15,35 +15,58 @@
       background-color: greenyellow; // for checking
       display: grid;
       grid-template-rows: 25% 25% 50%;
-      border-radius: 5px;
+      border-radius: .5rem;
     }
 
-    &-heading{
-        background-color: orange;
+    &-heading {
+      background-color: orange;
     }
 
-    &-search{
-        background-color: bisque;
-        &--content{
-            position: absolute;
+    &-search {
+      background-color: bisque;
+      &--content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        &---bar {
+          width: 32rem;
+          border-radius: 2.5rem;
+          height: 2.5rem;
+          border: none;
+          background-color: #fff;
+          display: flex;
+          padding: 0 .5rem;
+
+          &----input {
+            width: 26rem;
+          }
+
+          &----icon {
+            font-size: 1.6rem;
+            color: grey;
+            transition: color 0.3s;
+            position: relative;
             top: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-            &---bar{
-                width: 32rem;    
-                border-radius: 25px;
-                height: 2.5rem;
-                border: none;
-                background-color: #fff;
-                &:active{
-                    border: none;
-                }
+            transform: translateY(-12px);
+
+            &:hover {
+              color: black;
             }
+          }
+          &:active {
+            border: none;
+            color: black;
+          }
+
+          &:hover {
+            color: black;
+          }
         }
+      }
     }
 
-    &-content{
-
+    &-content {
     }
   }
 
