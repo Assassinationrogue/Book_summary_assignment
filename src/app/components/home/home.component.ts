@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { fromEvent, merge } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, take } from 'rxjs/operators';
 import { BookApiService } from 'src/app/services/book-api.service';
 
 @Component({
@@ -34,8 +34,16 @@ export class HomeComponent implements OnInit {
       )
       .subscribe((text: string) => {
         this.isLoading = true;
-        this.bookService.searchGetCall(text).subscribe(
+        this.bookService.searchGetCall(text).pipe(filter(res=>{return res['docs']})).subscribe(
           (res) => {
+            /**
+             * @description docs: []
+             *   numFound: 143
+             *   numFoundExact: true
+             *   num_found: 143
+             *   offset: null
+             *   q: "let us c"
+             */
             this.isLoading = false;
             this.apiResponse = res;
             console.log(res);

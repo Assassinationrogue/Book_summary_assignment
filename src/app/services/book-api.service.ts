@@ -17,6 +17,8 @@ export class BookApiService {
     if (term === '') {
       return of([]);
     }
-    return this.http.get(`http://openlibrary.org/search.json?q=${term}`);
+    return this.http.get(
+      `http://openlibrary.org/search.json?q=${term}&limit=10&fields=key,cover_i,title,author_name,name`
+    );
   }
 }
