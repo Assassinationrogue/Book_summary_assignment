@@ -3,11 +3,11 @@
   <div class="layout__body-wrapper">
     <div class="layout__body-heading"></div>
     <div class="layout__body-search">
-        <div class="control" [ngClass]="{ 'is-loading': isLoading }">
+        <div class="layout__body-search--content" [ngClass]="{ 'is-loading': isLoading }">
       <input
         type="text"
         #searchInput
-        class="input"
+        class="layout__body-search--content---bar"
         placeholder="Type book name"
       />
     </div>

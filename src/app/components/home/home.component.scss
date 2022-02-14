@@ -1,7 +1,7 @@
 .layout {
   display: grid;
   grid-template-rows: 17.2vh 94.6vh 17.2vh;
-  row-gap: 5%;
+  row-gap: 2%;
 
   &__nav {
     &-wrapper {
@@ -24,6 +24,12 @@
 
     &-search{
         background-color: bisque;
+        &--content{
+            &---bar{
+                
+
+            }
+        }
     }
 
     &-content{
