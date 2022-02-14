@@ -5,25 +5,25 @@
 
   &__nav {
     &-wrapper {
-      background-color: rgb(152, 182, 91);
+      //background-color: rgb(152, 182, 91);
       border-radius: 5px;
     }
   }
 
   &__body {
     &-wrapper {
-      background-color: greenyellow; // for checking
+      //background-color: greenyellow; // for checking
       display: grid;
       grid-template-rows: 25% 25% 50%;
-      border-radius: .5rem;
+      border-radius: 0.5rem;
     }
 
     &-heading {
-      background-color: orange;
+      //background-color: orange;
     }
 
     &-search {
-      background-color: bisque;
+      //background-color: bisque;
       &--content {
         position: absolute;
         top: 50%;
@@ -33,34 +33,62 @@
           width: 32rem;
           border-radius: 2.5rem;
           height: 2.5rem;
-          border: none;
+          border: solid 1px rgb(172, 171, 171);
           background-color: #fff;
           display: flex;
-          padding: 0 .5rem;
+          padding: 0 0.5rem;
+          transition: all 0.3s;
+          &:hover &----icon {
+            color: rgb(158, 157, 157);
+          }
+
+          &:focus-within &----icon {
+            color: rgb(158, 157, 157);
+          }
+
+          &:hover {
+            border: solid 1px rgb(160, 159, 159);
+          }
+
+          &:focus-within {
+            border: solid 1px rgb(114, 113, 113);
+          }
 
           &----input {
             width: 26rem;
+            font-size: 1.2rem;
+            border: none;
+            outline: none;
+            padding-left: 0.5rem;
+            color: rgb(54, 54, 54);
+            &:active .icon-hover {
+              color: rgb(158, 157, 157);
+            }
+
+            &::placeholder {
+              color: rgb(209, 208, 208);
+            }
+
+            &:active {
+              border: none;
+              outline: none;
+            }
           }
 
           &----icon {
             font-size: 1.6rem;
-            color: grey;
+            color: rgb(206, 204, 204);
             transition: color 0.3s;
             position: relative;
             top: 50%;
+            padding-right: 0.5rem;
+            border-right: solid 1px rgb(158, 157, 157);
             transform: translateY(-12px);
+            height: fit-content;
 
             &:hover {
               color: black;
             }
-          }
-          &:active {
-            border: none;
-            color: black;
-          }
-
-          &:hover {
-            color: black;
           }
         }
       }
