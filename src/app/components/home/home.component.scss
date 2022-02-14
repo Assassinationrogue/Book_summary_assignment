@@ -25,9 +25,19 @@
     &-search{
         background-color: bisque;
         &--content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
             &---bar{
-                
-
+                width: 32rem;    
+                border-radius: 25px;
+                height: 2.5rem;
+                border: none;
+                background-color: #fff;
+                &:active{
+                    border: none;
+                }
             }
         }
     }
