@@ -1,26 +1,40 @@
 .layout {
   display: grid;
-  grid-template-rows: 17.2vh 54.6vh 17.2vh;
+  grid-template-rows: 17.2vh 94.6vh 17.2vh;
   row-gap: 5%;
 
-
   &__nav {
-    &-wrapper{
-          background-color: rgb(152, 182, 91);
+    &-wrapper {
+      background-color: rgb(152, 182, 91);
+      border-radius: 5px;
     }
   }
 
-  &__body{
-      &-wrapper {
+  &__body {
+    &-wrapper {
       background-color: greenyellow; // for checking
       display: grid;
+      grid-template-rows: 25% 25% 50%;
+      border-radius: 5px;
+    }
+
+    &-heading{
+        background-color: orange;
+    }
+
+    &-search{
+        background-color: bisque;
+    }
+
+    &-content{
+
     }
   }
 
-  &__footer{
-      &-wrapper{
-        background-color: darkcyan;
-      }
+  &__footer {
+    &-wrapper {
+      background-color: darkcyan;
+      border-radius: 5px;
+    }
   }
-
 }
