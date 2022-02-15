@@ -19,7 +19,6 @@ export class BookComponent implements OnInit {
   ngOnInit(): void {
     this.bookService
       .getBookDetails(this.router.snapshot.params.id)
-     
       .subscribe((details) => {
         this.bookDetail = details;
       });
