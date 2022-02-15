@@ -1,0 +1,205 @@
+.layout {
+  display: grid;
+  grid-template-rows: 17.2vh 94.6vh 17.2vh;
+  row-gap: 2%;
+
+  &__nav {
+    &-wrapper {
+      //background-color: rgb(152, 182, 91);
+      border-radius: 5px;
+    }
+  }
+
+  &__body {
+    &-wrapper {
+      //background-color: greenyellow; // for checking
+      display: grid;
+      grid-template-rows: 20% 20% 60%;
+      border-radius: 0.5rem;
+    }
+
+    &-heading {
+      //background-color: orange;
+      font-size: 2rem;
+      text-align: center;
+      color: darkcyan;
+    }
+
+    &-search {
+      //background-color: bisque;
+      &--content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        &---bar {
+          width: 32rem;
+          border-radius: 2.5rem;
+          height: 2.5rem;
+          border: solid 1px rgb(172, 171, 171);
+          background-color: #fff;
+          display: flex;
+          padding: 0 0.5rem;
+          transition: all 0.3s;
+          &:hover &----icon {
+            color: rgb(158, 157, 157);
+          }
+
+          &:focus-within &----icon {
+            color: rgb(158, 157, 157);
+          }
+
+          &:hover {
+            border: solid 1px rgb(160, 159, 159);
+          }
+
+          &:focus-within {
+            border: solid 1px rgb(114, 113, 113);
+          }
+
+          &----input {
+            width: 26rem;
+            font-size: 1.2rem;
+            border: none;
+            outline: none;
+            padding-left: 0.5rem;
+            color: rgb(54, 54, 54);
+            &:active .icon-hover {
+              color: rgb(158, 157, 157);
+            }
+
+            &::placeholder {
+              color: rgb(209, 208, 208);
+            }
+
+            &:active {
+              border: none;
+              outline: none;
+            }
+          }
+
+          &----icon {
+            font-size: 1.6rem;
+            color: rgb(206, 204, 204);
+            transition: color 0.3s;
+            position: relative;
+            top: 50%;
+            padding-right: 0.5rem;
+            border-right: solid 1px rgb(158, 157, 157);
+            transform: translateY(-12px);
+            height: fit-content;
+
+            &:hover {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+
+    &-content {
+      //background-color: antiquewhite;
+      &--list {
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translateX(-50%) translateY(50%);
+
+        &---drop {
+          background-color: #fff;
+          border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 5px;
+          width: 32rem;
+          list-style-type: none;
+          padding: 1rem 2rem;
+          margin: 0 auto;
+          border-radius: 6px;
+
+          &----item {
+            font-size: 1rem;
+            margin: 5px 0;
+            a {
+              text-decoration: none;
+              color: #373838;
+              width: 100%;
+              display: inline-block;
+              border-radius: 6px;
+
+              &:visited {
+                color: #373838;
+              }
+
+              &:hover {
+                cursor: default;
+                color: #373838;
+                background-color: #c0dbecb4;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    &-wrapper {
+      background-color: darkcyan;
+      border-radius: 5px;
+      padding: 1rem 2rem;
+      & > div {
+        display: block;
+        margin: 2rem auto;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@keyframes spinner__rolling-inner--animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.spinner__rolling-inner div {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #85a2b6;
+  border-top-color: transparent;
+  border-radius: 50%;
+}
+.spinner__rolling-inner div {
+  animation: spinner__rolling-inner--animate 1s linear infinite;
+  top: 19px;
+  left: 75px;
+}
+.spinner__rolling {
+  width: 100px;
+  height: 100px;
+  display: block;
+  background: none;
+}
+.spinner__rolling-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; 
+}
+.spinner__rolling-inner div {
+  box-sizing: content-box;
+}
+
+.footer-text {
+  font-size: 1rem;
+  text-align: right;
+}
+
+.logo{
+  transform: translateX(-50px);
+}

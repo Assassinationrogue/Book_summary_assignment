@@ -1,0 +1,33 @@
+.dtl-container{
+    width: 32rem;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 6px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    box-shadow: 1px 2px 6px rgb(179, 179, 179);
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+}
+
+.title{
+    text-align: center;
+    padding: 5px 0;
+    
+}
+
+.details{
+    padding: 10px 0;
+}
+
+.oneline-display{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 5%;
+    & > p{
+        font-size: 1rem;
+    }
+}
