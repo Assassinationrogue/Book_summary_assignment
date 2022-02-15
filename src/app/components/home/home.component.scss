@@ -14,19 +14,22 @@
     &-wrapper {
       //background-color: greenyellow; // for checking
       display: grid;
-      grid-template-rows: 25% 25% 50%;
+      grid-template-rows: 20% 20% 60%;
       border-radius: 0.5rem;
     }
 
     &-heading {
       //background-color: orange;
+      font-size: 2rem;
+      text-align: center;
+      color: darkcyan;
     }
 
     &-search {
       //background-color: bisque;
       &--content {
         position: absolute;
-        top: 55%;
+        top: 50%;
         left: 50%;
         transform: translateX(-50%);
         &---bar {
@@ -101,7 +104,7 @@
         // top: 50%;
         // left: 50%;
         // transform: translateX(-50%) translateY(50%);
-       
+
         &---drop {
           background-color: #fff;
           border-bottom-right-radius: 5px;
@@ -110,9 +113,29 @@
           list-style-type: none;
           padding: 1rem 2rem;
           margin: 0 auto;
+          border-radius: 6px;
 
-          &----item{
+          &----item {
+            font-size: 1rem;
+            margin: 5px 0;
+            a {
+              text-decoration: none;
+              color: #373838;
+              width: 100%;
+              display: inline-block;
+              border-radius: 6px;
 
+              &:visited {
+                color: #373838;
+              }
+
+              &:hover {
+                cursor: default;
+                color: #373838;
+                background-color: #c0dbecb4;
+                width: 100%;
+              }
+            }
           }
         }
       }
@@ -123,6 +146,12 @@
     &-wrapper {
       background-color: darkcyan;
       border-radius: 5px;
+      padding: 1rem 2rem;
+      & > div {
+        display: block;
+        margin: 2rem auto;
+        color: #fff;
+      }
     }
   }
 }
@@ -160,8 +189,17 @@
   position: relative;
   transform: translateZ(0) scale(1);
   backface-visibility: hidden;
-  transform-origin: 0 0; /* see note above */
+  transform-origin: 0 0; 
 }
 .spinner__rolling-inner div {
   box-sizing: content-box;
+}
+
+.footer-text {
+  font-size: 1rem;
+  text-align: right;
+}
+
+.logo{
+  transform: translateX(-50px);
 }

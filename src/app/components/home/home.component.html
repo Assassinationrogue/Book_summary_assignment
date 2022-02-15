@@ -2,7 +2,20 @@
   <div class="layout__nav-wrapper"></div>
   <div class="layout__body-wrapper">
     <div class="layout__body-heading">
-      <i class="fa-solid fa-360-degrees"></i>
+      <div class="logo">
+        <img
+          src="../../../assets/blob.svg"
+          alt=""
+          style="width: 100px; height: 100px; position: absolute"
+        />
+        <i
+          class="fa-solid fa-book-open"
+          style="position: relative; z-index: 2; left: 30px;"
+        ></i>
+        <p style="position: relative; z-index: 1; top: 35%; left: 3%; transform:translateY(50px)">
+          The book guy
+        </p>
+      </div>
     </div>
     <div class="layout__body-search">
       <div class="layout__body-search--content">
@@ -22,24 +35,26 @@
               <div></div>
             </div>
           </div>
-          <!-- <button type="submit" class="layout__body-search--content---bar----button">Go</button> -->
         </div>
       </div>
     </div>
     <div class="layout__body-content">
-      <div
-        class="layout__body-content--list"
-        *ngIf="isHoverable"
-      >
+      <div class="layout__body-content--list" *ngIf="isHoverable">
         <ul class="layout__body-content--list---drop">
           <ng-container *ngFor="let book of apiResponse">
             <li class="layout__body-content--list---drop----item">
-              <a [routerLink]="[book?.seed[0].slice(7)]" (click)="setBookIdToLocal(book?.key)">{{ book?.title }}</a>
+              <a
+                [routerLink]="[book?.seed[0].slice(7)]"
+                (click)="setBookIdToLocal(book?.key)"
+                >{{ book?.title }}</a
+              >
             </li>
           </ng-container>
         </ul>
       </div>
     </div>
   </div>
-  <div class="layout__footer-wrapper"></div>
+  <div class="layout__footer-wrapper">
+    <div class="footer-text">By Saumyadip Biswas</div>
+  </div>
 </div>

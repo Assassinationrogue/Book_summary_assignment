@@ -1,7 +1,6 @@
-import { BookBriefInfo } from './../../models/book';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { fromEvent, merge } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, take } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 import { BookApiService } from 'src/app/services/book-api.service';
 
 @Component({
@@ -65,7 +64,6 @@ export class HomeComponent implements OnInit {
             this.isLoading = false;
             this.apiResponse = res['docs'];
             this.isHoverable = this.apiResponse?.length;
-            console.log(this.apiResponse)
           },
           (err) => {
             this.isLoading = false;

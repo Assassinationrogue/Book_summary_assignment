@@ -1,36 +1,35 @@
 <div class="dtl-container">
-  <h3 class="title">{{ bookDetails?.title }}</h3>
+  <h3 class="title">{{ bookDetail?.title }}</h3>
   <hr/>
-  <ng-container *ngFor="let information in []"></ng-container>
-  
-    <div class="details">
+  <!--Sorry about this tried looping all the data in many other ways but failed to do so-->
+    <div class="details" *ngIf="bookDetail?.publishers">
         <div class="oneline-display">
-            <h6 style="width: fit-content;">Publisher :</h6> <p>{{bookDetails?.publishers}}</p>
+            <h6 style="width: fit-content;">Publisher :</h6> <p>{{bookDetail?.publishers}}</p>
         </div>
     </div>
-    <div class="details">
+    <div class="details" *ngIf="bookDetail?.physical_format">
         <div class="oneline-display">
-            <h6 style="width: fit-content;">Physical format :</h6> <p>{{bookDetails?.physical_format}}</p>
+            <h6 style="width: fit-content;">Physical format :</h6> <p>{{bookDetail?.physical_format}}</p>
         </div>
     </div>
-    <div class="details">
+    <div class="details" *ngIf="bookDetail?.number_of_pages">
         <div class="oneline-display">
-            <h6 style="width: fit-content;">Number of pages :</h6> <p>{{bookDetails?.number_of_pages}}</p>
+            <h6 style="width: fit-content;">Number of pages :</h6> <p>{{bookDetail?.number_of_pages}}</p>
         </div>
     </div>
-     <div class="details">
+     <div class="details" *ngIf="bookDetail?.publish_date">
         <div class="oneline-display">
-            <h6 style="width: fit-content;">Publish date :</h6> <p>{{bookDetails?.publish_date}}</p>
+            <h6 style="width: fit-content;">Publish date :</h6> <p>{{bookDetail?.publish_date}}</p>
         </div>
     </div>
-    <div class="details">
+    <div class="details" *ngIf="bookDetail?.isbn_10">
         <div class="oneline-display">
-            <h6 style="width: fit-content;">ISBN 10 :</h6> <p>{{bookDetails?.isbn_10}}</p>
+            <h6 style="width: fit-content;">ISBN 10 :</h6> <p>{{bookDetail?.isbn_10}}</p>
         </div>
     </div>
-     <div class="details">
+     <div class="details" *ngIf="bookDetail?.isbn_13 !== ''">
         <div class="oneline-display">
-            <h6 style="width: fit-content;">ISBN 13 :</h6> <p>{{bookDetails?.isbn_13}}</p>
+            <h6 style="width: fit-content;">ISBN 13 :</h6> <p>{{bookDetail?.isbn_13}}</p>
         </div>
     </div>
 
