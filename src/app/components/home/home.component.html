@@ -5,9 +5,7 @@
       <i class="fa-solid fa-360-degrees"></i>
     </div>
     <div class="layout__body-search">
-      <div
-        class="layout__body-search--content"
-      >
+      <div class="layout__body-search--content">
         <div class="layout__body-search--content---bar">
           <i
             class="fa-solid fa-magnifying-glass layout__body-search--content---bar----icon icon-hover"
@@ -15,6 +13,7 @@
           <input
             type="text"
             #searchInput
+            id="search"
             class="layout__body-search--content---bar----input"
             placeholder="Book name"
           />
@@ -28,9 +27,16 @@
       </div>
     </div>
     <div class="layout__body-content">
-      <div class="layout__body-conent--list is-hoverable" *ngIf="apiResponse?.length">
-        <ul *ngFor="let book of apiResponse">
-          <li>{{ book?.title }}</li>
+      <div
+        class="layout__body-content--list"
+        *ngIf="isHoverable"
+      >
+        <ul class="layout__body-content--list---drop">
+          <ng-container *ngFor="let book of apiResponse">
+            <li class="layout__body-content--list---drop----item">
+              <a href="">{{ book?.title }}</a>
+            </li>
+          </ng-container>
         </ul>
       </div>
     </div>

@@ -26,7 +26,7 @@
       //background-color: bisque;
       &--content {
         position: absolute;
-        top: 50%;
+        top: 55%;
         left: 50%;
         transform: translateX(-50%);
         &---bar {
@@ -95,10 +95,29 @@
     }
 
     &-content {
+      //background-color: antiquewhite;
+      &--list {
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translateX(-50%) translateY(50%);
+       
+        &---drop {
+          background-color: #fff;
+          border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 5px;
+          width: 32rem;
+          list-style-type: none;
+          padding: 1rem 2rem;
+          margin: 0 auto;
+
+          &----item{
+
+          }
+        }
+      }
     }
   }
-
-  
 
   &__footer {
     &-wrapper {
@@ -108,11 +127,13 @@
   }
 }
 
-
-
 @keyframes spinner__rolling-inner--animate {
-  0% { transform: translate(-50%,-50%) rotate(0deg); }
-  100% { transform: translate(-50%,-50%) rotate(360deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 .spinner__rolling-inner div {
   position: absolute;
@@ -125,7 +146,7 @@
 .spinner__rolling-inner div {
   animation: spinner__rolling-inner--animate 1s linear infinite;
   top: 19px;
-  left: 75px
+  left: 75px;
 }
 .spinner__rolling {
   width: 100px;
@@ -141,4 +162,6 @@
   backface-visibility: hidden;
   transform-origin: 0 0; /* see note above */
 }
-.spinner__rolling-inner div { box-sizing: content-box; }
+.spinner__rolling-inner div {
+  box-sizing: content-box;
+}

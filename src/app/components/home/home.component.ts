@@ -1,5 +1,5 @@
 import { BookBriefInfo } from './../../models/book';
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { fromEvent, merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, take } from 'rxjs/operators';
 import { BookApiService } from 'src/app/services/book-api.service';
@@ -10,21 +10,29 @@ import { BookApiService } from 'src/app/services/book-api.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('searchInput') search: ElementRef;
   isLoading: Boolean = false;
   apiResponse: any = [];
+  isHoverable: boolean = false;
 
   constructor(
     public searchInput: ElementRef,
     private bookService: BookApiService
   ) {
     this.searchInput = searchInput;
+    this.search = searchInput;
+    
   }
 
   ngOnInit(): void {
     const keyupEvent$ = fromEvent(this.searchInput?.nativeElement, 'keyup');
     const pasteEvent$ = fromEvent(this.searchInput?.nativeElement, 'input');
     const allEvents$ = merge(keyupEvent$, pasteEvent$);
-
+    document.querySelector(".layout")?.addEventListener('click',(event)=>{
+      event.stopPropagation();
+      this.isHoverable = false;
+    })
+   
     allEvents$
       .pipe(
         map((event: any) => {
@@ -34,6 +42,15 @@ export class HomeComponent implements OnInit {
         distinctUntilChanged()
       )
       .subscribe((text: string) => {
+        document.querySelector("#search")?.addEventListener('click',(event)=>{
+          event.stopPropagation();
+          if(text !== ''){
+            this.isHoverable = true;
+          }else{
+            this.isHoverable = false;
+          }
+
+        })
         this.isLoading = true;
         this.bookService.searchGetCall(text).subscribe(
           (res) => {
@@ -47,9 +64,7 @@ export class HomeComponent implements OnInit {
              */
             this.isLoading = false;
             this.apiResponse = res['docs'];
-            this.apiResponse.forEach((data: BookBriefInfo)=>{
-              console.log(data.title)
-            })
+            this.isHoverable = this.apiResponse?.length;
           },
           (err) => {
             this.isLoading = false;
