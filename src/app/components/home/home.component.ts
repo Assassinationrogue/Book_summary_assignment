@@ -72,4 +72,8 @@ export class HomeComponent implements OnInit {
         );
       });
   }
+
+  setBookIdToLocal(id: string){ 
+    localStorage.setItem("bookId", id.slice(7));
+  }
 }

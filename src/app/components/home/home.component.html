@@ -34,7 +34,7 @@
         <ul class="layout__body-content--list---drop">
           <ng-container *ngFor="let book of apiResponse">
             <li class="layout__body-content--list---drop----item">
-              <a href="">{{ book?.title }}</a>
+              <a href="" (click)="setBookIdToLocal(book?.key)">{{ book?.title }}</a>
             </li>
           </ng-container>
         </ul>
