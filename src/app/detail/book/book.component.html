@@ -1,1 +1,35 @@
-<p>book works!</p>
+<div class="dtl-container">
+  <h3 class="title">{{ bookDetails?.title }}</h3>
+  <hr/>
+    <div class="details">
+        <div class="oneline-display">
+            <h6 style="width: fit-content;">Publisher :</h6> <p>{{bookDetails?.publishers}}</p>
+        </div>
+    </div>
+    <div class="details">
+        <div class="oneline-display">
+            <h6 style="width: fit-content;">Physical format :</h6> <p>{{bookDetails?.physical_format}}</p>
+        </div>
+    </div>
+    <div class="details">
+        <div class="oneline-display">
+            <h6 style="width: fit-content;">Number of pages :</h6> <p>{{bookDetails?.number_of_pages}}</p>
+        </div>
+    </div>
+     <div class="details">
+        <div class="oneline-display">
+            <h6 style="width: fit-content;">Publish date :</h6> <p>{{bookDetails?.publish_date}}</p>
+        </div>
+    </div>
+    <div class="details">
+        <div class="oneline-display">
+            <h6 style="width: fit-content;">ISBN 10 :</h6> <p>{{bookDetails?.isbn_10}}</p>
+        </div>
+    </div>
+     <div class="details">
+        <div class="oneline-display">
+            <h6 style="width: fit-content;">ISBN 13 :</h6> <p>{{bookDetails?.isbn_13}}</p>
+        </div>
+    </div>
+
+</div>

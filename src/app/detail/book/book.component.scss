@@ -1,0 +1,32 @@
+.dtl-container{
+    width: fit-content;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 6px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    box-shadow: 1px 2px 6px rgb(179, 179, 179);
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+}
+
+.title{
+    text-align: center;
+    padding: 5px 0;
+    
+}
+
+.details{
+    padding: 10px 0;
+}
+
+.oneline-display{
+    display: flex;
+    justify-content: space-between;
+    & > p{
+        font-size: 1rem;
+    }
+}
