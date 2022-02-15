@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
 
         })
         this.isLoading = true;
-        this.bookService.searchGetCall(text).subscribe(
+        this.bookService.searchBookTitle(text).subscribe(
           (res) => {
             /**
              * @description docs: []
@@ -65,6 +65,7 @@ export class HomeComponent implements OnInit {
             this.isLoading = false;
             this.apiResponse = res['docs'];
             this.isHoverable = this.apiResponse?.length;
+            console.log(this.apiResponse)
           },
           (err) => {
             this.isLoading = false;

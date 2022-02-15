@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BookComponent } from './book.component';
-
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [
-    BookComponent
-  ],
+  declarations: [BookComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: BookComponent,
+      },
+    ]),
+  ],
 })
-export class BookModule { }
+export class BookModule {}

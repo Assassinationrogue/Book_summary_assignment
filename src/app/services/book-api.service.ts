@@ -13,12 +13,23 @@ export class BookApiService {
    * @param term string
    * @returns Observable
    */
-  searchGetCall(term: string): Observable<any> {
+  searchBookTitle(term: string): Observable<any> {
     if (term === '') {
       return of([]);
     }
     return this.http.get(
-      `http://openlibrary.org/search.json?q=${term}&limit=10&fields=key,cover_i,title,author_name,name`
+      `http://openlibrary.org/search.json?q=${term}&limit=10`
+    );
+  }
+
+  /**
+   * Fetches book details
+   * @param id of book in string
+   * @returns Observable
+   */
+  getBookDetails(id: string): Observable<any>{
+    return this.http.get(
+      `http://openlibrary.org/books/${id}.json`
     );
   }
 }
