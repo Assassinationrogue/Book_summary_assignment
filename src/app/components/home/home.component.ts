@@ -1,9 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { fromEvent, merge, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { BookApiService } from 'src/app/services/book-api.service';
@@ -21,18 +16,28 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     public searchInput: ElementRef,
+    public searchBar: ElementRef,
     private bookService: BookApiService
   ) {
     this.searchInput = searchInput;
+    this.searchBar = searchBar;
   }
 
   ngOnInit(): void {
-    document.querySelector('.layout')?.addEventListener('click', (event) => {
-      event.stopPropagation();
-      this.isHoverable = false;
-    });
-
+    this.hideList();
     this.getSearchValue();
+  }
+
+  /**
+   * Hides search list upon clicking area other than input box
+   */
+  hideList(): void {
+    this.searchBar.nativeElement
+      .querySelector('.layout')
+      ?.addEventListener('click', (event: any) => {
+        event.stopPropagation();
+        this.isHoverable = false;
+      });
   }
 
   /**
@@ -52,9 +57,9 @@ export class HomeComponent implements OnInit, OnDestroy {
           distinctUntilChanged()
         )
         .subscribe((text: string) => {
-          document
+          this.searchBar.nativeElement
             .querySelector('#search')
-            ?.addEventListener('click', (event) => {
+            ?.addEventListener('click', (event: any) => {
               event.stopPropagation();
               if (text !== '') {
                 this.isHoverable = true;
