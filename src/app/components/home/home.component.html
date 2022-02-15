@@ -2,7 +2,7 @@
   <div class="layout__nav-wrapper"></div>
   <div class="layout__body-wrapper">
     <div class="layout__body-heading">
-        <i class="fa-solid fa-360-degrees"></i>
+      <i class="fa-solid fa-360-degrees"></i>
     </div>
     <div class="layout__body-search">
       <div
@@ -19,6 +19,11 @@
             class="layout__body-search--content---bar----input"
             placeholder="Book name"
           />
+          <div class="spinner__rolling" *ngIf="isLoading">
+            <div class="spinner__rolling-inner">
+              <div></div>
+            </div>
+          </div>
           <!-- <button type="submit" class="layout__body-search--content---bar----button">Go</button> -->
         </div>
       </div>
