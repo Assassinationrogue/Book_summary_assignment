@@ -1,6 +1,8 @@
 <div class="dtl-container">
   <h3 class="title">{{ bookDetails?.title }}</h3>
   <hr/>
+  <ng-container *ngFor="let information in []"></ng-container>
+  
     <div class="details">
         <div class="oneline-display">
             <h6 style="width: fit-content;">Publisher :</h6> <p>{{bookDetails?.publishers}}</p>

@@ -1,5 +1,5 @@
 .dtl-container{
-    width: fit-content;
+    width: 32rem;
     height: fit-content;
     background-color: #fff;
     border-radius: 6px;
@@ -24,8 +24,9 @@
 }
 
 .oneline-display{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 5%;
     & > p{
         font-size: 1rem;
     }
