@@ -1,3 +1,4 @@
+import { BookBriefInfo } from './../../models/book';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { fromEvent, merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, take } from 'rxjs/operators';
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
       )
       .subscribe((text: string) => {
         this.isLoading = true;
-        this.bookService.searchGetCall(text).pipe(filter(res=>{return res['docs']})).subscribe(
+        this.bookService.searchGetCall(text).subscribe(
           (res) => {
             /**
              * @description docs: []
@@ -45,8 +46,10 @@ export class HomeComponent implements OnInit {
              *   q: "let us c"
              */
             this.isLoading = false;
-            this.apiResponse = res;
-            console.log(res);
+            this.apiResponse = res['docs'];
+            this.apiResponse.forEach((data: BookBriefInfo)=>{
+              console.log(data.title)
+            })
           },
           (err) => {
             this.isLoading = false;
